@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+<!-- LRM ROBOTICS - Protesis transhumeral V1. Generado por scripts/lrm_urdf.py -->
+<!-- Unidades SI (m, kg, rad). Z arriba, brazo derecho hacia +X, palma -Z. Base fija = socket. -->
+<robot name="lrm_protesis_v1">
+  <material name="rPET"><color rgba="0.10 0.55 0.50 1"/></material>
+  <link name="socket_arm">
+    <!-- piezas: socket_transhumeral, liner_silicona_medica, emg_electrode_housing_biceps, emg_electrode_housing_triceps, harness_mounting_plate, suspension_harness, arm_proximal_cap, arm_cosmetic_cover, arm_distal_cap, humeral_structural_tube, internal_cable_channel, battery_housing, elbow_body_proximal, elbow_servo_mount, elbow_rotation_axis_pin, elbow_lateral_cover_medial, elbow_friction_screw_medial, elbow_lateral_cover_lateral, elbow_friction_screw_lateral, elbow_angle_limiter -->
+    <inertial>
+      <origin xyz="0.130860 0.000075 0.004872" rpy="0 0 0"/>
+      <mass value="0.47155"/>
+      <inertia ixx="9.5105e-04" ixy="1.8788e-04" ixz="2.2079e-04" iyy="4.6114e-03" iyz="-6.6551e-05" izz="4.6190e-03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/socket_arm.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/socket_arm.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="elbow_joint">
+    <!-- piezas: elbow_body_distal, elbow_transmission_gear, forearm_proximal_cap, forearm_lateral_cosmetic_cover, lipo_compartment_lid, forearm_main_housing, solar_panel_support_base, solar_contact_connector, solar_panel_dorsal_forearm, solar_charge_module_cover_TP4056, electronics_compartment_ESP32, lipo_battery_compartment, spring_anchor_plate, five_servo_mount_base, forearm_distal_cap, tendon_guide_tube_pinky, tendon_guide_tube_middle, tendon_guide_tube_index, tendon_guide_tube_ring, tendon_guide_tube_thumb, wrist_proximal_body, wrist_rotation_axis, wrist_cable_passthrough, wrist_locking_ring -->
+    <inertial>
+      <origin xyz="0.120198 0.000014 -0.009496" rpy="0 0 0"/>
+      <mass value="0.27452"/>
+      <inertia ixx="1.7777e-04" ixy="-6.3876e-07" ixz="7.0226e-05" iyy="1.8779e-03" iyz="5.4268e-09" izz="1.8845e-03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/elbow_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/elbow_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="wrist_joint">
+    <!-- piezas: wrist_friction_bushing, wrist_distal_body, wrist_cosmetic_cover, palm_palmar_grip_surface, palm_cosmetic_cover, palm_dorsal, metacarpal_support_index, metacarpal_support_middle, metacarpal_support_ring, metacarpal_support_pinky, thumb_servo_mount, thumb_metacarpal_support_45deg, thumb_angular_support_15_45 -->
+    <inertial>
+      <origin xyz="0.051839 -0.001186 0.000915" rpy="0 0 0"/>
+      <mass value="0.07491"/>
+      <inertia ixx="3.2675e-05" ixy="-8.4472e-07" ixz="-1.2733e-06" iyy="8.5724e-05" iyz="-7.2582e-07" izz="1.0205e-04"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/wrist_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/wrist_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="index_mcp_joint">
+    <!-- piezas: finger_index_joint_mcp, finger_index_return_spring, finger_index_phalanx_proximal, finger_index_tendon_channel -->
+    <inertial>
+      <origin xyz="0.016436 -0.000004 0.000393" rpy="0 0 0"/>
+      <mass value="0.00575"/>
+      <inertia ixx="2.0175e-07" ixy="1.9033e-11" ixz="-5.3548e-09" iyy="6.1398e-07" iyz="2.8084e-11" izz="6.5446e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/index_mcp_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/index_mcp_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="middle_mcp_joint">
+    <!-- piezas: finger_middle_joint_mcp, finger_middle_return_spring, finger_middle_phalanx_proximal, finger_middle_tendon_channel -->
+    <inertial>
+      <origin xyz="0.018049 -0.000004 0.000386" rpy="0 0 0"/>
+      <mass value="0.00672"/>
+      <inertia ixx="2.5369e-07" ixy="3.3627e-12" ixz="-5.8316e-09" iyy="8.2375e-07" iyz="4.9441e-11" izz="8.7181e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/middle_mcp_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/middle_mcp_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="ring_mcp_joint">
+    <!-- piezas: finger_ring_joint_mcp, finger_ring_return_spring, finger_ring_phalanx_proximal, finger_ring_tendon_channel -->
+    <inertial>
+      <origin xyz="0.016965 -0.000004 0.000373" rpy="0 0 0"/>
+      <mass value="0.00576"/>
+      <inertia ixx="1.9531e-07" ixy="1.1335e-11" ixz="-5.0047e-09" iyy="6.4399e-07" iyz="3.0407e-11" izz="6.7652e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/ring_mcp_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/ring_mcp_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="pinky_mcp_joint">
+    <!-- piezas: finger_pinky_joint_mcp, finger_pinky_return_spring, finger_pinky_phalanx_proximal, finger_pinky_tendon_channel -->
+    <inertial>
+      <origin xyz="0.012056 -0.000003 0.000402" rpy="0 0 0"/>
+      <mass value="0.00327"/>
+      <inertia ixx="8.2406e-08" ixy="3.9437e-11" ixz="-3.6367e-09" iyy="2.2972e-07" iyz="-2.5937e-11" izz="2.4399e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pinky_mcp_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pinky_mcp_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="thumb_cmc_opposition_joint">
+    <!-- piezas:  -->
+    <inertial>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <mass value="0.00100"/>
+      <inertia ixx="1.0000e-08" ixy="0.0000e+00" ixz="0.0000e+00" iyy="1.0000e-08" iyz="0.0000e+00" izz="1.0000e-08"/>
+    </inertial>
+  </link>
+  <link name="thumb_cmc_flexion_joint">
+    <!-- piezas: thumb_joint_cmc, thumb_metacarpal -->
+    <inertial>
+      <origin xyz="0.017888 -0.000001 0.000353" rpy="0 0 0"/>
+      <mass value="0.00818"/>
+      <inertia ixx="3.5531e-07" ixy="4.3968e-10" ixz="-3.8745e-08" iyy="1.1641e-06" iyz="1.0561e-09" izz="1.2306e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/thumb_cmc_flexion_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/thumb_cmc_flexion_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="thumb_mcp_joint">
+    <!-- piezas: thumb_joint_mcp, thumb_return_spring, thumb_phalanx_proximal -->
+    <inertial>
+      <origin xyz="0.012768 -0.000002 0.000853" rpy="0 0 0"/>
+      <mass value="0.00486"/>
+      <inertia ixx="1.9383e-07" ixy="9.8989e-11" ixz="-1.0966e-08" iyy="3.6839e-07" iyz="-1.5855e-11" izz="4.2687e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/thumb_mcp_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/thumb_mcp_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="index_pip_joint">
+    <!-- piezas: finger_index_joint_pip, finger_index_phalanx_middle -->
+    <inertial>
+      <origin xyz="0.007693 0.000001 0.001047" rpy="0 0 0"/>
+      <mass value="0.00280"/>
+      <inertia ixx="9.0877e-08" ixy="-8.1004e-12" ixz="-9.6887e-09" iyy="1.2669e-07" iyz="1.2737e-11" izz="1.5912e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/index_pip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/index_pip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="middle_pip_joint">
+    <!-- piezas: finger_middle_joint_pip, finger_middle_phalanx_middle -->
+    <inertial>
+      <origin xyz="0.009366 -0.000001 0.001035" rpy="0 0 0"/>
+      <mass value="0.00346"/>
+      <inertia ixx="1.2133e-07" ixy="6.6727e-11" ixz="-1.1158e-08" iyy="1.9079e-07" iyz="-8.0823e-12" izz="2.3060e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/middle_pip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/middle_pip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="ring_pip_joint">
+    <!-- piezas: finger_ring_joint_pip, finger_ring_phalanx_middle -->
+    <inertial>
+      <origin xyz="0.008765 -0.000001 0.001017" rpy="0 0 0"/>
+      <mass value="0.00302"/>
+      <inertia ixx="9.5103e-08" ixy="4.1555e-11" ixz="-9.8949e-09" iyy="1.5553e-07" iyz="-6.4615e-12" izz="1.8513e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/ring_pip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/ring_pip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="pinky_pip_joint">
+    <!-- piezas: finger_pinky_joint_pip, finger_pinky_phalanx_middle -->
+    <inertial>
+      <origin xyz="0.005352 0.000000 0.000772" rpy="0 0 0"/>
+      <mass value="0.00174"/>
+      <inertia ixx="4.1318e-08" ixy="3.0729e-12" ixz="-4.9072e-09" iyy="5.6853e-08" iyz="-1.1797e-12" izz="6.9832e-08"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pinky_pip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pinky_pip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="index_dip_joint">
+    <!-- piezas: finger_index_joint_dip, finger_index_phalanx_distal, finger_index_distal_tendon_anchor, finger_index_fingertip_pad -->
+    <inertial>
+      <origin xyz="0.008811 0.000001 -0.000046" rpy="0 0 0"/>
+      <mass value="0.00352"/>
+      <inertia ixx="1.1517e-07" ixy="3.4530e-12" ixz="-1.0657e-09" iyy="1.8079e-07" iyz="4.7603e-12" izz="2.0631e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/index_dip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/index_dip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="middle_dip_joint">
+    <!-- piezas: finger_middle_joint_dip, finger_middle_phalanx_distal, finger_middle_distal_tendon_anchor, finger_middle_fingertip_pad -->
+    <inertial>
+      <origin xyz="0.009509 0.000001 0.000028" rpy="0 0 0"/>
+      <mass value="0.00389"/>
+      <inertia ixx="1.3692e-07" ixy="3.6100e-12" ixz="4.3201e-10" iyy="2.1575e-07" iyz="5.5928e-12" izz="2.4537e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/middle_dip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/middle_dip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="ring_dip_joint">
+    <!-- piezas: finger_ring_joint_dip, finger_ring_phalanx_distal, finger_ring_distal_tendon_anchor, finger_ring_fingertip_pad -->
+    <inertial>
+      <origin xyz="0.008803 0.000001 -0.000045" rpy="0 0 0"/>
+      <mass value="0.00341"/>
+      <inertia ixx="1.0705e-07" ixy="3.3194e-12" ixz="-1.0234e-09" iyy="1.7469e-07" iyz="4.5997e-12" izz="1.9518e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/ring_dip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/ring_dip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="pinky_dip_joint">
+    <!-- piezas: finger_pinky_joint_dip, finger_pinky_phalanx_distal, finger_pinky_distal_tendon_anchor, finger_pinky_fingertip_pad -->
+    <inertial>
+      <origin xyz="0.007262 0.000001 -0.000190" rpy="0 0 0"/>
+      <mass value="0.00248"/>
+      <inertia ixx="5.8829e-08" ixy="2.3005e-12" ixz="-2.3835e-09" iyy="1.0633e-07" iyz="3.5505e-12" izz="1.1642e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pinky_dip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pinky_dip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="thumb_ip_joint">
+    <!-- piezas: thumb_joint_ip, thumb_phalanx_distal, thumb_distal_tendon_anchor, thumb_fingertip_pad -->
+    <inertial>
+      <origin xyz="0.013097 0.000011 0.000153" rpy="0 0 0"/>
+      <mass value="0.00531"/>
+      <inertia ixx="2.0747e-07" ixy="1.0664e-10" ixz="1.0179e-08" iyy="4.2113e-07" iyz="1.8645e-10" izz="4.6876e-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/thumb_ip_joint.stl" scale="1 1 1"/></geometry>
+      <material name="rPET"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/thumb_ip_joint.stl" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <joint name="elbow_joint" type="revolute">
+    <!-- Codo: flexion 0-135 deg, eje medio-lateral | reposo Blender: 0.0 deg -->
+    <parent link="socket_arm"/>
+    <child link="elbow_joint"/>
+    <origin xyz="0.300000 0.000000 0.016000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 -1.000000 0.000000"/>
+    <limit lower="0.00000" upper="2.35619" effort="2.0" velocity="1.5"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="wrist_joint" type="revolute">
+    <!-- Muneca: prono-supinacion +-90 deg, eje largo del antebrazo | reposo Blender: 0.0 deg -->
+    <parent link="elbow_joint"/>
+    <child link="wrist_joint"/>
+    <origin xyz="0.234500 0.000000 -0.016000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="1.000000 0.000000 0.000000"/>
+    <limit lower="-1.57080" upper="1.57080" effort="0.6" velocity="1.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="index_mcp_joint" type="revolute">
+    <!-- index MCP flexion | reposo Blender: 5 deg -->
+    <parent link="wrist_joint"/>
+    <child link="index_mcp_joint"/>
+    <origin xyz="0.109500 0.026500 0.001000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="index_pip_joint" type="revolute">
+    <!-- index PIP flexion | reposo Blender: 8 deg -->
+    <parent link="index_mcp_joint"/>
+    <child link="index_pip_joint"/>
+    <origin xyz="0.038000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="index_dip_joint" type="revolute">
+    <!-- index DIP flexion | reposo Blender: 5 deg -->
+    <parent link="index_pip_joint"/>
+    <child link="index_dip_joint"/>
+    <origin xyz="0.022000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="middle_mcp_joint" type="revolute">
+    <!-- middle MCP flexion | reposo Blender: 8 deg -->
+    <parent link="wrist_joint"/>
+    <child link="middle_mcp_joint"/>
+    <origin xyz="0.111500 0.008500 0.001000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="middle_pip_joint" type="revolute">
+    <!-- middle PIP flexion | reposo Blender: 12 deg -->
+    <parent link="middle_mcp_joint"/>
+    <child link="middle_pip_joint"/>
+    <origin xyz="0.041000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="middle_dip_joint" type="revolute">
+    <!-- middle DIP flexion | reposo Blender: 6 deg -->
+    <parent link="middle_pip_joint"/>
+    <child link="middle_dip_joint"/>
+    <origin xyz="0.025000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="ring_mcp_joint" type="revolute">
+    <!-- ring MCP flexion | reposo Blender: 10 deg -->
+    <parent link="wrist_joint"/>
+    <child link="ring_mcp_joint"/>
+    <origin xyz="0.109500 -0.009500 0.001000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="ring_pip_joint" type="revolute">
+    <!-- ring PIP flexion | reposo Blender: 15 deg -->
+    <parent link="ring_mcp_joint"/>
+    <child link="ring_pip_joint"/>
+    <origin xyz="0.039000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="ring_dip_joint" type="revolute">
+    <!-- ring DIP flexion | reposo Blender: 8 deg -->
+    <parent link="ring_pip_joint"/>
+    <child link="ring_dip_joint"/>
+    <origin xyz="0.024000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="pinky_mcp_joint" type="revolute">
+    <!-- pinky MCP flexion | reposo Blender: 14 deg -->
+    <parent link="wrist_joint"/>
+    <child link="pinky_mcp_joint"/>
+    <origin xyz="0.106500 -0.027000 0.001000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="pinky_pip_joint" type="revolute">
+    <!-- pinky PIP flexion | reposo Blender: 18 deg -->
+    <parent link="pinky_mcp_joint"/>
+    <child link="pinky_pip_joint"/>
+    <origin xyz="0.030000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="pinky_dip_joint" type="revolute">
+    <!-- pinky DIP flexion | reposo Blender: 10 deg -->
+    <parent link="pinky_pip_joint"/>
+    <child link="pinky_dip_joint"/>
+    <origin xyz="0.018000 0.000000 0.000000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="thumb_cmc_opposition_joint" type="revolute">
+    <!-- CMC: arco de oposicion 0-45 deg (rest = 15 deg anatomico) | reposo Blender: 0.0 deg -->
+    <parent link="wrist_joint"/>
+    <child link="thumb_cmc_opposition_joint"/>
+    <origin xyz="0.039500 0.022000 -0.006000" rpy="0.000000 -0.000000 0.000000"/>
+    <axis xyz="-1.000000 0.000000 0.000000"/>
+    <limit lower="0.00000" upper="0.78540" effort="0.15" velocity="3.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="thumb_cmc_flexion_joint" type="revolute">
+    <!-- CMC: flexion | reposo Blender: 0.0 deg -->
+    <parent link="thumb_cmc_opposition_joint"/>
+    <child link="thumb_cmc_flexion_joint"/>
+    <origin xyz="0.000000 0.000000 0.000000" rpy="-0.537579 0.466137 0.463648"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="0.52360" effort="0.15" velocity="3.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="thumb_mcp_joint" type="revolute">
+    <!-- thumb MCP flexion | reposo Blender: 8 deg -->
+    <parent link="thumb_cmc_flexion_joint"/>
+    <child link="thumb_mcp_joint"/>
+    <origin xyz="0.042000 0.000000 0.000000" rpy="-0.000000 -0.000000 0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.04720" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+  <joint name="thumb_ip_joint" type="revolute">
+    <!-- thumb IP flexion | reposo Blender: 10 deg -->
+    <parent link="thumb_mcp_joint"/>
+    <child link="thumb_ip_joint"/>
+    <origin xyz="0.031000 -0.000000 -0.000000" rpy="0.000000 -0.000000 -0.000000"/>
+    <axis xyz="0.000000 1.000000 0.000000"/>
+    <limit lower="0.00000" upper="1.57080" effort="0.25" velocity="4.0"/>
+    <dynamics damping="0.02" friction="0.01"/>
+  </joint>
+</robot>

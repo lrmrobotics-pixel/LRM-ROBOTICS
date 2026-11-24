@@ -1,0 +1,1936 @@
+{
+ "units": "m (mostrar en mm)",
+ "up_axis": "Z",
+ "forward": "+X (brazo derecho, palma -Z)",
+ "origin": "cara proximal del socket",
+ "joints": [
+  {
+   "name": "socket_arm",
+   "parent": null,
+   "type": "fixed",
+   "pivot_m": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis_world": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "limits_deg": [],
+   "rest_deg": 0.0,
+   "desc": "Raiz: cara proximal del socket transhumeral"
+  },
+  {
+   "name": "elbow_joint",
+   "parent": "socket_arm",
+   "type": "revolute",
+   "pivot_m": [
+    0.3,
+    0.0,
+    0.016
+   ],
+   "axis_world": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    135
+   ],
+   "rest_deg": 0.0,
+   "desc": "Codo: flexion 0-135 deg, eje medio-lateral"
+  },
+  {
+   "name": "wrist_joint",
+   "parent": "elbow_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.5345,
+    0.0,
+    0.0
+   ],
+   "axis_world": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "limits_deg": [
+    -90,
+    90
+   ],
+   "rest_deg": 0.0,
+   "desc": "Muneca: prono-supinacion +-90 deg, eje largo del antebrazo"
+  },
+  {
+   "name": "index_mcp_joint",
+   "parent": "wrist_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.644,
+    0.0265,
+    0.001
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 5,
+   "desc": "index MCP flexion"
+  },
+  {
+   "name": "index_pip_joint",
+   "parent": "index_mcp_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.68186,
+    0.0265,
+    -0.00231
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 8,
+   "desc": "index PIP flexion"
+  },
+  {
+   "name": "index_dip_joint",
+   "parent": "index_pip_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.70329,
+    0.0265,
+    -0.00726
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 5,
+   "desc": "index DIP flexion"
+  },
+  {
+   "name": "middle_mcp_joint",
+   "parent": "wrist_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.646,
+    0.0085,
+    0.001
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 8,
+   "desc": "middle MCP flexion"
+  },
+  {
+   "name": "middle_pip_joint",
+   "parent": "middle_mcp_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.6866,
+    0.0085,
+    -0.00471
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 12,
+   "desc": "middle PIP flexion"
+  },
+  {
+   "name": "middle_dip_joint",
+   "parent": "middle_pip_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.71009,
+    0.0085,
+    -0.01326
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 6,
+   "desc": "middle DIP flexion"
+  },
+  {
+   "name": "ring_mcp_joint",
+   "parent": "wrist_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.644,
+    -0.0095,
+    0.001
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 10,
+   "desc": "ring MCP flexion"
+  },
+  {
+   "name": "ring_pip_joint",
+   "parent": "ring_mcp_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.68241,
+    -0.0095,
+    -0.00577
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 15,
+   "desc": "ring PIP flexion"
+  },
+  {
+   "name": "ring_dip_joint",
+   "parent": "ring_pip_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.70416,
+    -0.0095,
+    -0.01592
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 8,
+   "desc": "ring DIP flexion"
+  },
+  {
+   "name": "pinky_mcp_joint",
+   "parent": "wrist_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.641,
+    -0.027,
+    0.001
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 14,
+   "desc": "pinky MCP flexion"
+  },
+  {
+   "name": "pinky_pip_joint",
+   "parent": "pinky_mcp_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.67011,
+    -0.027,
+    -0.00626
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 18,
+   "desc": "pinky PIP flexion"
+  },
+  {
+   "name": "pinky_dip_joint",
+   "parent": "pinky_pip_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.68537,
+    -0.027,
+    -0.0158
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 10,
+   "desc": "pinky DIP flexion"
+  },
+  {
+   "name": "thumb_cmc_opposition_joint",
+   "parent": "wrist_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.574,
+    0.022,
+    -0.006
+   ],
+   "axis_world": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "limits_deg": [
+    0,
+    45
+   ],
+   "rest_deg": 0.0,
+   "desc": "CMC: arco de oposicion 0-45 deg (rest = 15 deg anatomico)"
+  },
+  {
+   "name": "thumb_cmc_flexion_joint",
+   "parent": "thumb_cmc_opposition_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.574,
+    0.022,
+    -0.006
+   ],
+   "axis_world": [
+    -0.59,
+    0.6653,
+    -0.4574
+   ],
+   "limits_deg": [
+    0,
+    30
+   ],
+   "rest_deg": 0.0,
+   "desc": "CMC: flexion"
+  },
+  {
+   "name": "thumb_mcp_joint",
+   "parent": "thumb_cmc_flexion_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.60756,
+    0.03878,
+    -0.02488
+   ],
+   "axis_world": [
+    -0.59,
+    0.6653,
+    -0.4574
+   ],
+   "limits_deg": [
+    0,
+    60
+   ],
+   "rest_deg": 8,
+   "desc": "thumb MCP flexion"
+  },
+  {
+   "name": "thumb_ip_joint",
+   "parent": "thumb_mcp_joint",
+   "type": "revolute",
+   "pivot_m": [
+    0.63158,
+    0.04832,
+    -0.04198
+   ],
+   "axis_world": [
+    -0.59,
+    0.6653,
+    -0.4574
+   ],
+   "limits_deg": [
+    0,
+    90
+   ],
+   "rest_deg": 10,
+   "desc": "thumb IP flexion"
+  }
+ ],
+ "parts": [
+  {
+   "name": "socket_transhumeral",
+   "link": "socket_arm",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    136.39,
+    112.71,
+    106.14
+   ],
+   "desc": "Encaje transhumeral impreso rPET, pared 4 mm"
+  },
+  {
+   "name": "liner_silicona_medica",
+   "link": "socket_arm",
+   "material": "Silicona medica platino ISO 10993",
+   "physics": "flexible",
+   "size_mm": [
+    137.31,
+    105.64,
+    98.83
+   ],
+   "desc": "Liner silicona grado medico curada por platino (ISO 10993-5), 3 mm"
+  },
+  {
+   "name": "emg_electrode_housing_biceps",
+   "link": "socket_arm",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    16.0,
+    16.0,
+    12.1
+   ],
+   "desc": "Alojamiento TPU para electrodo sEMG (MyoWare)"
+  },
+  {
+   "name": "emg_electrode_housing_triceps",
+   "link": "socket_arm",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    16.0,
+    16.0,
+    12.1
+   ],
+   "desc": "Alojamiento TPU para electrodo sEMG (MyoWare)"
+  },
+  {
+   "name": "harness_mounting_plate",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    25.88,
+    24.0,
+    5.87
+   ],
+   "desc": "Placa de anclaje del arnes en 8"
+  },
+  {
+   "name": "suspension_harness",
+   "link": "socket_arm",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    228.05,
+    155.94,
+    84.34
+   ],
+   "desc": "Arnes de suspension en 8 (TPU), tramo del lado protesico"
+  },
+  {
+   "name": "arm_proximal_cap",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    3.8,
+    86.0,
+    80.0
+   ],
+   "desc": "Mamparo proximal: fija tubo humeral al socket"
+  },
+  {
+   "name": "arm_cosmetic_cover",
+   "link": "socket_arm",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    69.55,
+    84.0,
+    78.0
+   ],
+   "desc": "Funda cosmetica hueca rPET"
+  },
+  {
+   "name": "arm_distal_cap",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    5.8,
+    76.0,
+    70.0
+   ],
+   "desc": "Mamparo distal del brazo"
+  },
+  {
+   "name": "humeral_structural_tube",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    81.8,
+    22.0,
+    22.0
+   ],
+   "desc": "Tubo portante humeral 22x17 mm (rPET reforzado)"
+  },
+  {
+   "name": "internal_cable_channel",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    94.2,
+    8.0,
+    8.0
+   ],
+   "desc": "Canal de cables EMG/potencia"
+  },
+  {
+   "name": "battery_housing",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    68.8,
+    41.0,
+    22.5
+   ],
+   "desc": "Alojamiento pack 2x18650 Li-ion (66x37x19 mm utiles)"
+  },
+  {
+   "name": "elbow_body_proximal",
+   "link": "socket_arm",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    93.18,
+    76.0,
+    70.0
+   ],
+   "desc": "Mitad proximal del codo: carcasa + orejas portantes"
+  },
+  {
+   "name": "elbow_servo_mount",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    54.0,
+    3.0,
+    30.0
+   ],
+   "desc": "Marco de montaje servo alto torque 40x20 mm (DS3218 o similar)"
+  },
+  {
+   "name": "elbow_rotation_axis_pin",
+   "link": "socket_arm",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    70.8,
+    8.0
+   ],
+   "desc": "Pasador de acero 8 mm"
+  },
+  {
+   "name": "elbow_lateral_cover_medial",
+   "link": "socket_arm",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    42.0,
+    2.5,
+    42.0
+   ],
+   "desc": "Tapa lateral del codo"
+  },
+  {
+   "name": "elbow_friction_screw_medial",
+   "link": "socket_arm",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    7.0,
+    12.62,
+    7.0
+   ],
+   "desc": "Tornillo de friccion ajustable M4 (precarga de arandelas)"
+  },
+  {
+   "name": "elbow_lateral_cover_lateral",
+   "link": "socket_arm",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    42.0,
+    2.5,
+    42.0
+   ],
+   "desc": "Tapa lateral del codo"
+  },
+  {
+   "name": "elbow_friction_screw_lateral",
+   "link": "socket_arm",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    7.0,
+    12.62,
+    7.0
+   ],
+   "desc": "Tornillo de friccion ajustable M4 (precarga de arandelas)"
+  },
+  {
+   "name": "elbow_angle_limiter",
+   "link": "socket_arm",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    38.22,
+    7.3,
+    42.98
+   ],
+   "desc": "Tope mecanico: el talon del antebrazo recorre 0-135 deg"
+  },
+  {
+   "name": "elbow_body_distal",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    56.0,
+    43.5,
+    39.47
+   ],
+   "desc": "Mitad distal del codo (lengueta + talon de tope), paso de cables"
+  },
+  {
+   "name": "elbow_transmission_gear",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    15.52,
+    0.0,
+    16.74
+   ],
+   "desc": "Corona z40 m1.125 (pinon z24 en el servo, distancia entre ejes 36 mm)"
+  },
+  {
+   "name": "forearm_proximal_cap",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    5.8,
+    80.0,
+    73.71
+   ],
+   "desc": "Mamparo proximal del antebrazo, recibe la lengueta del codo"
+  },
+  {
+   "name": "forearm_lateral_cosmetic_cover",
+   "link": "elbow_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    98.0,
+    18.82,
+    44.0
+   ],
+   "desc": "Tapa lateral removible: acceso a servos y electronica"
+  },
+  {
+   "name": "lipo_compartment_lid",
+   "link": "elbow_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    52.0,
+    33.0,
+    6.43
+   ],
+   "desc": "Tapa abatible del compartimento LiPo/supercapacitor (sin herramientas)"
+  },
+  {
+   "name": "forearm_main_housing",
+   "link": "elbow_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    169.68,
+    81.11,
+    73.99
+   ],
+   "desc": "Carcasa principal hueca del antebrazo"
+  },
+  {
+   "name": "solar_panel_support_base",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    160.0,
+    68.0,
+    30.31
+   ],
+   "desc": "Bandeja rebajada del canal solar (fondo del canal)"
+  },
+  {
+   "name": "solar_contact_connector",
+   "link": "elbow_joint",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    11.6,
+    15.6,
+    3.2
+   ],
+   "desc": "Conector de contacto con 4 pads dorados (carga solar)"
+  },
+  {
+   "name": "solar_panel_dorsal_forearm",
+   "link": "elbow_joint",
+   "material": "Panel CIGS flexible",
+   "physics": "flexible",
+   "size_mm": [
+    151.2,
+    59.2,
+    22.68
+   ],
+   "desc": "Panel solar flexible CIGS ~83 cm2 con marco/labio de encastre y clip inferior"
+  },
+  {
+   "name": "solar_charge_module_cover_TP4056",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    18.0,
+    22.0,
+    7.88
+   ],
+   "desc": "Cubierta del cargador TP4056 + diodo de bloqueo"
+  },
+  {
+   "name": "electronics_compartment_ESP32",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    60.0,
+    75.51,
+    18.5
+   ],
+   "desc": "Bahia ESP32/Arduino Nano 58x34 mm sobre estante portante"
+  },
+  {
+   "name": "lipo_battery_compartment",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    60.0,
+    38.0,
+    17.87
+   ],
+   "desc": "Compartimento LiPo 1S / supercapacitor (almacenamiento dual)"
+  },
+  {
+   "name": "spring_anchor_plate",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    3.0,
+    40.0,
+    23.21
+   ],
+   "desc": "Placa de anclaje de los elasticos de retorno (extension)"
+  },
+  {
+   "name": "five_servo_mount_base",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    78.0,
+    70.47,
+    2.5
+   ],
+   "desc": "Base para 5 micro servos MG90S (4 dedos + flexion pulgar)"
+  },
+  {
+   "name": "forearm_distal_cap",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    6.0,
+    57.0,
+    47.0
+   ],
+   "desc": "Mamparo distal: soporte de la muneca"
+  },
+  {
+   "name": "tendon_guide_tube_pinky",
+   "link": "elbow_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    66.11,
+    14.17,
+    20.55
+   ],
+   "desc": "Tubo guia PTFE 3/1.8 mm (Bowden) servo -> muneca"
+  },
+  {
+   "name": "tendon_guide_tube_middle",
+   "link": "elbow_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    65.97,
+    3.0,
+    18.42
+   ],
+   "desc": "Tubo guia PTFE 3/1.8 mm (Bowden) servo -> muneca"
+  },
+  {
+   "name": "tendon_guide_tube_index",
+   "link": "elbow_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    66.11,
+    14.17,
+    20.55
+   ],
+   "desc": "Tubo guia PTFE 3/1.8 mm (Bowden) servo -> muneca"
+  },
+  {
+   "name": "tendon_guide_tube_ring",
+   "link": "elbow_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    28.58,
+    8.0,
+    21.24
+   ],
+   "desc": "Tubo guia PTFE 3/1.8 mm (Bowden) servo -> muneca"
+  },
+  {
+   "name": "tendon_guide_tube_thumb",
+   "link": "elbow_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    28.58,
+    8.0,
+    21.24
+   ],
+   "desc": "Tubo guia PTFE 3/1.8 mm (Bowden) servo -> muneca"
+  },
+  {
+   "name": "wrist_proximal_body",
+   "link": "elbow_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    15.7,
+    40.0,
+    40.0
+   ],
+   "desc": "Cuerpo proximal de la muneca (fijo al antebrazo)"
+  },
+  {
+   "name": "wrist_rotation_axis",
+   "link": "elbow_joint",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    32.0,
+    20.0,
+    20.0
+   ],
+   "desc": "Eje hueco de prono-supinacion 20/15.6 mm"
+  },
+  {
+   "name": "wrist_cable_passthrough",
+   "link": "elbow_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    46.5,
+    14.0,
+    14.0
+   ],
+   "desc": "Pasa-cables/tendones a traves de la muneca"
+  },
+  {
+   "name": "wrist_locking_ring",
+   "link": "elbow_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    9.0,
+    46.0,
+    46.0
+   ],
+   "desc": "Anillo de bloqueo con estrias (bloquea la rotacion)"
+  },
+  {
+   "name": "wrist_friction_bushing",
+   "link": "wrist_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    15.0,
+    28.0,
+    28.0
+   ],
+   "desc": "Buje de friccion (PET/PTFE) para prono-supinacion"
+  },
+  {
+   "name": "wrist_distal_body",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    17.0,
+    38.0,
+    38.0
+   ],
+   "desc": "Cuerpo distal de la muneca (gira con la mano)"
+  },
+  {
+   "name": "wrist_cosmetic_cover",
+   "link": "wrist_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    12.5,
+    44.4,
+    44.4
+   ],
+   "desc": "Funda cosmetica de la muneca"
+  },
+  {
+   "name": "palm_palmar_grip_surface",
+   "link": "wrist_joint",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    78.0,
+    75.21,
+    17.5
+   ],
+   "desc": "Cara palmar de agarre (TPU texturizado)"
+  },
+  {
+   "name": "palm_cosmetic_cover",
+   "link": "wrist_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    48.0,
+    42.0,
+    8.13
+   ],
+   "desc": "Tapa cosmetica dorsal (acceso a servo del pulgar)"
+  },
+  {
+   "name": "palm_dorsal",
+   "link": "wrist_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    78.0,
+    76.31,
+    23.2
+   ],
+   "desc": "Palma dorsal estructural hueca"
+  },
+  {
+   "name": "metacarpal_support_index",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    35.5,
+    16.5,
+    22.29
+   ],
+   "desc": "Soporte metacarpiano / guia de tendon"
+  },
+  {
+   "name": "metacarpal_support_middle",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    55.5,
+    17.0,
+    30.25
+   ],
+   "desc": "Soporte metacarpiano / guia de tendon"
+  },
+  {
+   "name": "metacarpal_support_ring",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    53.5,
+    16.0,
+    30.17
+   ],
+   "desc": "Soporte metacarpiano / guia de tendon"
+  },
+  {
+   "name": "metacarpal_support_pinky",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    44.5,
+    14.0,
+    23.68
+   ],
+   "desc": "Soporte metacarpiano / guia de tendon"
+  },
+  {
+   "name": "thumb_servo_mount",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    27.0,
+    65.97,
+    9.2
+   ],
+   "desc": "Montaje del micro servo de oposicion del pulgar"
+  },
+  {
+   "name": "thumb_metacarpal_support_45deg",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    15.46,
+    20.29,
+    19.99
+   ],
+   "desc": "Collar de la articulacion CMC, inclinado 45 deg (oposicion)"
+  },
+  {
+   "name": "thumb_angular_support_15_45",
+   "link": "wrist_joint",
+   "material": "rPET reforzado EBA-GMA",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    6.0,
+    7.67
+   ],
+   "desc": "Cuna de ajuste angular del pulgar 15-45 deg"
+  },
+  {
+   "name": "finger_index_joint_mcp",
+   "link": "index_mcp_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    16.7,
+    8.0
+   ],
+   "desc": "Articulacion MCP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_index_return_spring",
+   "link": "index_mcp_joint",
+   "material": "Acero resorte",
+   "physics": "flexible",
+   "size_mm": [
+    5.86,
+    4.62,
+    5.86
+   ],
+   "desc": "Resorte de torsion de retorno (extension)"
+  },
+  {
+   "name": "finger_index_phalanx_proximal",
+   "link": "index_mcp_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    29.0,
+    16.5,
+    14.5
+   ],
+   "desc": "Falange proximal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_index_tendon_channel",
+   "link": "index_mcp_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    28.6,
+    2.5,
+    2.5
+   ],
+   "desc": "Camisa PTFE del canal de tendon"
+  },
+  {
+   "name": "finger_index_joint_pip",
+   "link": "index_pip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    16.7,
+    8.0
+   ],
+   "desc": "Articulacion PIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_index_phalanx_middle",
+   "link": "index_pip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    13.0,
+    16.5,
+    14.5
+   ],
+   "desc": "Falange middle (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_index_joint_dip",
+   "link": "index_dip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    16.7,
+    8.0
+   ],
+   "desc": "Articulacion DIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_index_phalanx_distal",
+   "link": "index_dip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    5.12,
+    16.5,
+    14.5
+   ],
+   "desc": "Falange distal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_index_distal_tendon_anchor",
+   "link": "index_dip_joint",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    1.6,
+    15.3,
+    1.6
+   ],
+   "desc": "Pasador de anclaje distal del tendon"
+  },
+  {
+   "name": "finger_index_fingertip_pad",
+   "link": "index_dip_joint",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    9.1,
+    17.1,
+    15.1
+   ],
+   "desc": "Yema TPU de alta friccion"
+  },
+  {
+   "name": "finger_middle_joint_mcp",
+   "link": "middle_mcp_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    17.2,
+    8.0
+   ],
+   "desc": "Articulacion MCP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_middle_return_spring",
+   "link": "middle_mcp_joint",
+   "material": "Acero resorte",
+   "physics": "flexible",
+   "size_mm": [
+    5.86,
+    4.62,
+    5.86
+   ],
+   "desc": "Resorte de torsion de retorno (extension)"
+  },
+  {
+   "name": "finger_middle_phalanx_proximal",
+   "link": "middle_mcp_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    32.0,
+    17.0,
+    15.0
+   ],
+   "desc": "Falange proximal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_middle_tendon_channel",
+   "link": "middle_mcp_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    31.6,
+    2.5,
+    2.5
+   ],
+   "desc": "Camisa PTFE del canal de tendon"
+  },
+  {
+   "name": "finger_middle_joint_pip",
+   "link": "middle_pip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    17.2,
+    8.0
+   ],
+   "desc": "Articulacion PIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_middle_phalanx_middle",
+   "link": "middle_pip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    16.0,
+    17.0,
+    15.0
+   ],
+   "desc": "Falange middle (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_middle_joint_dip",
+   "link": "middle_dip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    17.2,
+    8.0
+   ],
+   "desc": "Articulacion DIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_middle_phalanx_distal",
+   "link": "middle_dip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    6.11,
+    17.0,
+    15.0
+   ],
+   "desc": "Falange distal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_middle_distal_tendon_anchor",
+   "link": "middle_dip_joint",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    1.6,
+    15.8,
+    1.6
+   ],
+   "desc": "Pasador de anclaje distal del tendon"
+  },
+  {
+   "name": "finger_middle_fingertip_pad",
+   "link": "middle_dip_joint",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    9.1,
+    17.6,
+    15.6
+   ],
+   "desc": "Yema TPU de alta friccion"
+  },
+  {
+   "name": "finger_ring_joint_mcp",
+   "link": "ring_mcp_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    16.2,
+    8.0
+   ],
+   "desc": "Articulacion MCP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_ring_return_spring",
+   "link": "ring_mcp_joint",
+   "material": "Acero resorte",
+   "physics": "flexible",
+   "size_mm": [
+    5.86,
+    4.62,
+    5.86
+   ],
+   "desc": "Resorte de torsion de retorno (extension)"
+  },
+  {
+   "name": "finger_ring_phalanx_proximal",
+   "link": "ring_mcp_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    30.0,
+    16.0,
+    14.5
+   ],
+   "desc": "Falange proximal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_ring_tendon_channel",
+   "link": "ring_mcp_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    29.6,
+    2.5,
+    2.5
+   ],
+   "desc": "Camisa PTFE del canal de tendon"
+  },
+  {
+   "name": "finger_ring_joint_pip",
+   "link": "ring_pip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    16.2,
+    8.0
+   ],
+   "desc": "Articulacion PIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_ring_phalanx_middle",
+   "link": "ring_pip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    15.0,
+    16.0,
+    14.5
+   ],
+   "desc": "Falange middle (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_ring_joint_dip",
+   "link": "ring_dip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    16.2,
+    8.0
+   ],
+   "desc": "Articulacion DIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_ring_phalanx_distal",
+   "link": "ring_dip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    5.12,
+    16.0,
+    14.5
+   ],
+   "desc": "Falange distal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_ring_distal_tendon_anchor",
+   "link": "ring_dip_joint",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    1.6,
+    14.8,
+    1.6
+   ],
+   "desc": "Pasador de anclaje distal del tendon"
+  },
+  {
+   "name": "finger_ring_fingertip_pad",
+   "link": "ring_dip_joint",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    9.1,
+    16.6,
+    15.1
+   ],
+   "desc": "Yema TPU de alta friccion"
+  },
+  {
+   "name": "finger_pinky_joint_mcp",
+   "link": "pinky_mcp_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    14.2,
+    8.0
+   ],
+   "desc": "Articulacion MCP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_pinky_return_spring",
+   "link": "pinky_mcp_joint",
+   "material": "Acero resorte",
+   "physics": "flexible",
+   "size_mm": [
+    5.86,
+    4.62,
+    5.86
+   ],
+   "desc": "Resorte de torsion de retorno (extension)"
+  },
+  {
+   "name": "finger_pinky_phalanx_proximal",
+   "link": "pinky_mcp_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    21.0,
+    14.0,
+    13.0
+   ],
+   "desc": "Falange proximal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_pinky_tendon_channel",
+   "link": "pinky_mcp_joint",
+   "material": "PTFE",
+   "physics": "rigid",
+   "size_mm": [
+    20.6,
+    2.5,
+    2.5
+   ],
+   "desc": "Camisa PTFE del canal de tendon"
+  },
+  {
+   "name": "finger_pinky_joint_pip",
+   "link": "pinky_pip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    14.2,
+    8.0
+   ],
+   "desc": "Articulacion PIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_pinky_phalanx_middle",
+   "link": "pinky_pip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    9.0,
+    14.0,
+    13.0
+   ],
+   "desc": "Falange middle (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_pinky_joint_dip",
+   "link": "pinky_dip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    8.0,
+    14.2,
+    8.0
+   ],
+   "desc": "Articulacion DIP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "finger_pinky_phalanx_distal",
+   "link": "pinky_dip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    3.14,
+    14.0,
+    13.0
+   ],
+   "desc": "Falange distal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "finger_pinky_distal_tendon_anchor",
+   "link": "pinky_dip_joint",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    1.6,
+    12.8,
+    1.6
+   ],
+   "desc": "Pasador de anclaje distal del tendon"
+  },
+  {
+   "name": "finger_pinky_fingertip_pad",
+   "link": "pinky_dip_joint",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    9.1,
+    14.6,
+    13.6
+   ],
+   "desc": "Yema TPU de alta friccion"
+  },
+  {
+   "name": "thumb_joint_cmc",
+   "link": "thumb_cmc_flexion_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    13.6,
+    13.6,
+    13.6
+   ],
+   "desc": "Rotula de la articulacion carpometacarpiana"
+  },
+  {
+   "name": "thumb_metacarpal",
+   "link": "thumb_cmc_flexion_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    34.51,
+    31.33,
+    28.52
+   ],
+   "desc": "Metacarpiano del pulgar (segmento proximal movil)"
+  },
+  {
+   "name": "thumb_joint_mcp",
+   "link": "thumb_mcp_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    16.49,
+    17.27,
+    14.88
+   ],
+   "desc": "Articulacion MCP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "thumb_return_spring",
+   "link": "thumb_mcp_joint",
+   "material": "Acero resorte",
+   "physics": "flexible",
+   "size_mm": [
+    6.89,
+    6.9,
+    6.53
+   ],
+   "desc": "Resorte de torsion de retorno (extension)"
+  },
+  {
+   "name": "thumb_phalanx_proximal",
+   "link": "thumb_mcp_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    26.79,
+    24.79,
+    24.13
+   ],
+   "desc": "Falange proximal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "thumb_joint_ip",
+   "link": "thumb_ip_joint",
+   "material": "PET negro",
+   "physics": "rigid",
+   "size_mm": [
+    16.49,
+    17.27,
+    14.88
+   ],
+   "desc": "Articulacion IP: barril + pasador 2.2 mm"
+  },
+  {
+   "name": "thumb_phalanx_distal",
+   "link": "thumb_ip_joint",
+   "material": "rPET reciclado",
+   "physics": "rigid",
+   "size_mm": [
+    18.81,
+    20.84,
+    22.25
+   ],
+   "desc": "Falange distal (rPET), canal de tendon palmar"
+  },
+  {
+   "name": "thumb_distal_tendon_anchor",
+   "link": "thumb_ip_joint",
+   "material": "Acero inox",
+   "physics": "rigid",
+   "size_mm": [
+    11.19,
+    12.37,
+    9.11
+   ],
+   "desc": "Pasador de anclaje distal del tendon"
+  },
+  {
+   "name": "thumb_fingertip_pad",
+   "link": "thumb_ip_joint",
+   "material": "TPU",
+   "physics": "flexible",
+   "size_mm": [
+    15.46,
+    19.74,
+    18.72
+   ],
+   "desc": "Yema TPU de alta friccion"
+  }
+ ],
+ "tendons": {
+  "thumb": [
+   [
+    0.4805,
+    0.00725,
+    0.016,
+    "elbow_joint"
+   ],
+   [
+    0.5073,
+    0.0022,
+    -0.0029,
+    "elbow_joint"
+   ],
+   [
+    0.545,
+    0.0,
+    0.0,
+    "wrist_joint"
+   ],
+   [
+    0.565,
+    0.006,
+    -0.006,
+    "wrist_joint"
+   ],
+   [
+    0.574,
+    0.018,
+    -0.014,
+    "wrist_joint"
+   ],
+   [
+    0.58931,
+    0.02633,
+    -0.01944,
+    "thumb_cmc_flexion_joint"
+   ],
+   [
+    0.60691,
+    0.03525,
+    -0.02917,
+    "thumb_cmc_flexion_joint"
+   ],
+   [
+    0.63168,
+    0.04763,
+    -0.04311,
+    "thumb_mcp_joint"
+   ],
+   [
+    0.64174,
+    0.05267,
+    -0.04877,
+    "thumb_ip_joint"
+   ]
+  ],
+  "index": [
+   [
+    0.4425,
+    0.0145,
+    0.016,
+    "elbow_joint"
+   ],
+   [
+    0.5073,
+    0.0036,
+    0.002,
+    "elbow_joint"
+   ],
+   [
+    0.545,
+    0.0,
+    0.0,
+    "wrist_joint"
+   ],
+   [
+    0.586,
+    0.0265,
+    -0.00405,
+    "wrist_joint"
+   ],
+   [
+    0.644,
+    0.0265,
+    -0.00405,
+    "wrist_joint"
+   ],
+   [
+    0.682,
+    0.0265,
+    -0.00405,
+    "index_mcp_joint"
+   ],
+   [
+    0.704,
+    0.0265,
+    -0.00405,
+    "index_pip_joint"
+   ],
+   [
+    0.7096,
+    0.0265,
+    -0.00405,
+    "index_dip_joint"
+   ]
+  ],
+  "middle": [
+   [
+    0.4425,
+    0.0,
+    0.016,
+    "elbow_joint"
+   ],
+   [
+    0.5073,
+    0.0,
+    0.0041,
+    "elbow_joint"
+   ],
+   [
+    0.545,
+    0.0,
+    0.0,
+    "wrist_joint"
+   ],
+   [
+    0.586,
+    0.0085,
+    -0.0043,
+    "wrist_joint"
+   ],
+   [
+    0.646,
+    0.0085,
+    -0.0043,
+    "wrist_joint"
+   ],
+   [
+    0.687,
+    0.0085,
+    -0.0043,
+    "middle_mcp_joint"
+   ],
+   [
+    0.712,
+    0.0085,
+    -0.0043,
+    "middle_pip_joint"
+   ],
+   [
+    0.7186,
+    0.0085,
+    -0.0043,
+    "middle_dip_joint"
+   ]
+  ],
+  "ring": [
+   [
+    0.4805,
+    -0.00725,
+    0.016,
+    "elbow_joint"
+   ],
+   [
+    0.5073,
+    -0.0022,
+    -0.0029,
+    "elbow_joint"
+   ],
+   [
+    0.545,
+    0.0,
+    0.0,
+    "wrist_joint"
+   ],
+   [
+    0.586,
+    -0.0095,
+    -0.00405,
+    "wrist_joint"
+   ],
+   [
+    0.644,
+    -0.0095,
+    -0.00405,
+    "wrist_joint"
+   ],
+   [
+    0.683,
+    -0.0095,
+    -0.00405,
+    "ring_mcp_joint"
+   ],
+   [
+    0.707,
+    -0.0095,
+    -0.00405,
+    "ring_pip_joint"
+   ],
+   [
+    0.7126,
+    -0.0095,
+    -0.00405,
+    "ring_dip_joint"
+   ]
+  ],
+  "pinky": [
+   [
+    0.4425,
+    -0.0145,
+    0.016,
+    "elbow_joint"
+   ],
+   [
+    0.5073,
+    -0.0036,
+    0.002,
+    "elbow_joint"
+   ],
+   [
+    0.545,
+    0.0,
+    0.0,
+    "wrist_joint"
+   ],
+   [
+    0.586,
+    -0.027,
+    -0.0033,
+    "wrist_joint"
+   ],
+   [
+    0.641,
+    -0.027,
+    -0.0033,
+    "wrist_joint"
+   ],
+   [
+    0.671,
+    -0.027,
+    -0.0033,
+    "pinky_mcp_joint"
+   ],
+   [
+    0.689,
+    -0.027,
+    -0.0033,
+    "pinky_pip_joint"
+   ],
+   [
+    0.6926,
+    -0.027,
+    -0.0033,
+    "pinky_dip_joint"
+   ]
+  ]
+ }
+}
